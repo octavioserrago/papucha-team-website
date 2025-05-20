@@ -1,0 +1,102 @@
+---
+// No props
+---
+
+<nav class="bg-black text-white px-6 py-4 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+            <img src="/logo.jpg" alt="Papucha Team Logo" class="h-10 w-auto" />
+            <span class="text-xl font-bold">Papucha Team</span>
+        </div>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex space-x-6">
+            <a href="#sobre" class="hover:text-yellow-400 transition"
+                >Sobre mí</a
+            >
+            <a href="#servicios" class="hover:text-yellow-400 transition"
+                >Servicios</a
+            >
+            <a
+                href="https://wa.me/541157431203"
+                target="_blank"
+                class="hover:text-yellow-400 transition">Contacto</a
+            >
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" class="md:hidden focus:outline-none">
+            <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+        id="mobile-menu"
+        class="md:hidden overflow-hidden max-h-0 opacity-0 transform scale-y-95 transition-all duration-500 ease-in-out origin-top bg-black bg-opacity-95 text-center space-y-6 px-6 py-0"
+    >
+        <a
+            href="#sobre"
+            class="block text-xl text-white hover:text-yellow-400 transition"
+            >Sobre mí</a
+        >
+        <a
+            href="#servicios"
+            class="block text-xl text-white hover:text-yellow-400 transition"
+            >Servicios</a
+        >
+        <a
+            href="https://wa.me/541157431203"
+            target="_blank"
+            class="block text-xl text-white hover:text-yellow-400 transition"
+            >Contacto</a
+        >
+    </div>
+
+    <script is:inline>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("mobile-menu");
+
+            let open = false;
+
+            toggle.addEventListener("click", () => {
+                open = !open;
+                if (open) {
+                    menu.classList.remove("max-h-0", "opacity-0", "scale-y-95");
+                    menu.classList.add(
+                        "max-h-96",
+                        "opacity-100",
+                        "scale-y-100",
+                        "py-8",
+                    );
+                } else {
+                    menu.classList.remove(
+                        "max-h-96",
+                        "opacity-100",
+                        "scale-y-100",
+                        "py-8",
+                    );
+                    menu.classList.add(
+                        "max-h-0",
+                        "opacity-0",
+                        "scale-y-95",
+                        "py-0",
+                    );
+                }
+            });
+        });
+    </script>
+</nav>

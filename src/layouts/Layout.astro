@@ -1,15 +1,18 @@
 ---
-import "./src/styles/global.css";
+import "../styles/global.css";
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/logo.jpg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Papucha Team | Hernan Marton</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Papucha Team | Hernán Marton</title>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="/logo.jpg" />
+
+		<!-- Font Awesome (para íconos si los necesitás) -->
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -17,8 +20,33 @@ import "./src/styles/global.css";
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
+		<!-- Meta tags básicas -->
+		<meta
+			name="description"
+			content="Asesoramiento personalizado de entrenamiento con Hernán Marton. Salud, fuerza y disciplina de la mano de Papucha Team."
+		/>
+		<meta
+			name="keywords"
+			content="Papucha Team, Hernán Marton, entrenador personal, culturismo, NABBA, entrenamiento, asesoramiento físico"
+		/>
+		<meta name="author" content="Hernán Marton" />
+
+		<!-- Redes sociales / Open Graph -->
+		<meta property="og:title" content="Papucha Team | Hernán Marton" />
+		<meta
+			property="og:description"
+			content="Entrenamiento personalizado con más de 30 años de experiencia. Salud, fuerza y disciplina con Papucha Team."
+		/>
+		<meta property="og:image" content="/logo.jpg" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="es_AR" />
+
+		<!-- Astro Generator (opcional) -->
+		<meta name="generator" content={Astro.generator} />
 	</head>
-	<body>
+
+	<body class="bg-black text-white">
 		<slot />
 	</body>
 </html>
